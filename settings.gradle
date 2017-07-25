@@ -1,1 +1,1 @@
-include ':mobile', ':wear', ':wearcommunication', ':yandexweatherclientlibrary', ':weatherprovider'
+include ':mobile', ':wear', ':wearcommunication', ':weatherprovider', ':accuweatherlibrary'

@@ -5,5 +5,5 @@ package com.grishberg.weather;
  */
 
 public interface WeatherResponseListener {
-    WeatherResponse getWeatherResponse();
+    void onWeatherResponse(WeatherResponse response);
 }

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AccuWeatherLibrary</string>
+    <string name="end_point">http://dataservice.accuweather.com</string>
+
+</resources>
