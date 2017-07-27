@@ -4,8 +4,8 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.grishberg.weather.WeatherResponse;
-import com.grishberg.weather.WeatherResponseListener;
+import com.grishberg.androidweatherprovider.WeatherResponse;
+import com.grishberg.androidweatherprovider.WeatherResponseListener;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,13 +21,13 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class WeatherServiceTest {
-    private WeatherService weatherService;
+    private AccuWeatherService weatherService;
     private Context appContext;
 
     @Before
     public void setUp() throws Exception {
         appContext = InstrumentationRegistry.getTargetContext();
-        weatherService = WeatherService.createForLocationId(appContext, 295212);
+        weatherService = AccuWeatherService.createForLocationId(appContext, 295212);
     }
 
     @Test
@@ -39,7 +39,8 @@ public class WeatherServiceTest {
                 countDownLatch.countDown();
             }
         };
-        weatherService.getCurrentWeather(listener);
+        weatherService.setWeatherListener(listener);
+        weatherService.getCurrentWeather();
         assertTrue(countDownLatch.await(5, TimeUnit.SECONDS));
     }
 
@@ -52,7 +53,8 @@ public class WeatherServiceTest {
                 countDownLatch.countDown();
             }
         };
-        weatherService.getForecast(listener);
+        weatherService.setWeatherListener(listener);
+        weatherService.getForecast();
         assertTrue(countDownLatch.await(5, TimeUnit.SECONDS));
     }
 }

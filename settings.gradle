@@ -1,1 +1,1 @@
-include ':mobile', ':wear', ':wearcommunication', ':weatherprovider', ':accuweatherlibrary'
+include ':mobile', ':wear', ':wearcommunication', ':accuweatherlibrary', ':androidweatherprovider', ':weatherresponsewrapper'

@@ -1,4 +1,4 @@
-package com.grishberg.weather;
+package com.grishberg.androidweatherprovider;
 
 /**
  * Created by grishberg on 21.07.17.
